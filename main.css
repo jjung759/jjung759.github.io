@@ -18,10 +18,13 @@ body {
 	/*font-color: blue;*/
 }
 .things {
+	`	padding: 10px;
 		display: flex;
 		flex-wrap: wrap;
 		justify content: center;
 		margin-top: 20px;
+		max-width: 432px;
+		height: 500 px;
 }
 .thing-particular
 {	
