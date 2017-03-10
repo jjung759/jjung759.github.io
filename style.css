@@ -1,20 +1,21 @@
 body {
 padding-top: 20px;
 padding-bottom: 20px;
-background-color: #66ff99;
- 
+/*background-color: #66ff99;*/
+background-color: lightblue;
+
 }
 .header,
 .footer
 {	padding-right: 15px;
-	padding-left: 15px;
+	padding-left: 0px;
 }
 .header{
 	padding-bottom: 20px;
 	border-bottom-style: solid;
 	border-bottom: 1px;
 	border-bottom-color: #33ff77;
-	
+
 
 }
 .header h3 {
@@ -25,7 +26,7 @@ background-color: #66ff99;
 .footer {
 	padding-top: 19px;
 	color: white;
-	border-top: 1px solid #33ff77;
+	border-bottom: 1px solid black;
 }
 
 @media (min-width: 768px) {
@@ -46,4 +47,3 @@ p {
 	color: white;
 	background-color: #66ff99;
 }
-
