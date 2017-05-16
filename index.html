@@ -39,19 +39,24 @@
       }
 
       function fillRes(){
-        $.get("embedHandle.php", {
+      /*  $.get("embedHandle.php", {
           "contentChoice" : 1
         }, function(result){
           $("#initialWords").html(result);
         });
+      */
+      var resumeInfo = "<object class='resume' data='../resume/jung.pdf'></object>";
+      $("#initialWords").html(resumeInfo);
       }
 
       function fillContentInfo(){
-        $.get("embedHandle.php", {
+      /*  $.get("embedHandle.php", {
           "contentChoice" : 2
         }, function(result){
           $("#initialWords").html(result);
-        });
+        }); */
+        var contactInfo = "<h1> Name: James Jung</h1><h2>Email: jmjhw9@mail.missouri.edu</h2><h3>Currently Based In: Columbia</h3>";
+        $("#initialWords").html(contactInfo);
       }
 
     </script>
