@@ -4,7 +4,7 @@
 
   switch($isReady){
     case 1:
-      $content = "<object class='resume' data='resume/jung.pdf'></object>";
+      $content = "<object class='resume' data='../resume/jung.pdf'></object>";
       print $content;
       break;
     case 2:
