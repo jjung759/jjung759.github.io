@@ -1,40 +1,82 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel='stylesheet'>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-		<link href='style.css' rel='stylesheet'>
-		<style>
-			body{
-				font-family: 'lato', sans-serif;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="header clearfix">
-			<nav>
-				<ul class="nav pull-right">
-				<li role="presentation" class="active">
-					<a href="Resume-Jung.pdf">Resume</a>
-				</li>
-			<div class="splashImage">
-			</div>
+  <head>
+    <meta charset="utf-8">
+    <title>James Jung</title>
+    <script src="jquery-3.2.1.min (1).js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="app.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Josefin Sans', sans-serif;
+      }
+    </style>
 
-			<div class="jumbotron" id="baseInfo">
-				<h1>Yo,</h1>
-				<p class="info">
-					My name's James Jung and I'm a second year student at the University of Missouri - Columbia,
-					studying Computer Science. I'm interested in audio applications, as well as Full Stack\software development,
-					I also serve as the production director for KCOU 88.1 FM.
-				</p>
+    <script>
 
-			</div>
-			<footer class="footer">
-				<h1>James Jung</h1>
-				<p> Email: jjung759@gmail.com--jmjhw9@mail.missouri.edu</p>
-			</footer>
+      var colorIs;
+      $(function() {
+          randomizeNavTabColors();
+      });
 
-		</div>
-	</body>
+      function randomizeNavTabColors(){
+        var k = Math.floor(Math.random() * 2);
+        console.dir(k);
+        switch(k){
+          case 0:
+            $("#Resume").css("background-color", "blue");
+            $("#Contact").css("background-color", "blue");
+            colorIs = "blue";
+            break;
+           case 1:
+              $("#Resume").css("background-color", "red");
+              $("#Contact").css("background-color", "red");
+              colorIs = "red";
+              break;
+          }
+      }
+
+      function fillRes(){
+        $.get("embedHandle.php", {
+          "contentChoice" : 1
+        }, function(result){
+          $("#initialWords").html(result);
+        });
+      }
+
+      function fillContentInfo(){
+        $.get("embedHandle.php", {
+          "contentChoice" : 2
+        }, function(result){
+          $("#initialWords").html(result);
+        });
+      }
+
+    </script>
+  </head>
+  <body>
+    <div class="page-header">
+      James Jung
+    </div>
+    <ul class="headers">
+      <li><div class="navSq" id="Resume" onClick="fillRes()">Resume</div></li>
+      <li><div class="navSq" id="Contact" onClick="fillContentInfo()">Contact</div></li>
+    </ul>
+    <div>
+    <img src="images/ohman1.jpeg" class="splashImage"></img>
+    </div>
+
+    <div id="greeting">
+        <h1>Yo</h1>
+    </div>
+    <div id="initialWords">
+      <h1>My name is James Jung, and I'm a CS student at the University of Missouri, I'm interested in full stack web development as well as audio applications, software engineering, and analytical work.</h1>
+      <h3>Feel free to check out my resume, or to get in contact with me</h3>
+    </div>
+
+
+
+  </body>
 </html>
